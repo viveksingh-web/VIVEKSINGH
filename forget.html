@@ -1,0 +1,94 @@
+<!-- forgot.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forgot Password | TrulyPay</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .forgot-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      width: 320px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .forgot-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #199fd9;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #107dbb;
+    }
+
+    .message {
+      text-align: center;
+      font-size: 14px;
+      color: green;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .back-link a {
+      color: #199fd9;
+      text-decoration: none;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="forgot-box">
+  <h2>Forgot Password</h2>
+  <input type="email" id="resetEmail" placeholder="Enter your email">
+  <button onclick="resetPass()">Reset Password</button>
+  <div class="message" id="resetMsg"></div>
+  <div class="back-link"><a href="login.html">Back to Login</a></div>
+</div>
+
+<script>
+  function resetPass() {
+    const enteredEmail = document.getElementById("resetEmail").value.trim();
+    const savedEmail = localStorage.getItem("userEmail");
+    const msg = document.getElementById("resetMsg");
+
+    if (enteredEmail === savedEmail) {
+      msg.textContent = "A reset link has been sent to your email (mock).";
+    } else {
+      msg.textContent = "Email not found. Try again.";
+      msg.style.color = "red";
+    }
+  }
+</script>
+
+</body>
+</html>

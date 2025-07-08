@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(90deg, #8e0038, #b8004e);
+      color: white;
+      padding: 20px 30px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 30px;
+      gap: 20px;
+    }
+
+    input[type="text"], input[type="email"], input[type="file"], input[type="date"], input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .form-group {
+      flex: 1 1 30%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .submit-btn {
+      width: 200px;
+      background: #2196f3;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 30px auto;
+    }
+
+    .submit-btn:hover {
+      background: #1976d2;
+    }
+
+    .footer {
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    .footer a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    #get-started {
+      display: block;
+      margin: 40px auto;
+      padding: 15px 30px;
+      font-size: 18px;
+      background: #8e0038;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    #get-started:hover {
+      background: #a90045;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="get-started" onclick="document.getElementById('register-form').scrollIntoView({ behavior: 'smooth' });">
+    Get Started
+  </button>
+
+  <div class="container" id="register-form">
+    <div class="header">Register to Continue</div>
+    <form>
+      <div class="form-group">
+        <input type="text" placeholder="Enter First Name">
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Enter Last Name">
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Enter Mobile No">
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Enter Email">
+      </div>
+
+      <div class="form-group">
+        <input type="text" placeholder="Enter Business Name">
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Enter Business Address">
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Enter Permanent Address">
+      </div>
+
+      <div class="form-group">
+        <input type="text" placeholder="Enter Aadhar Number">
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Enter City">
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Enter Pincode">
+      </div>
+
+      <div class="form-group">
+        <input type="text" placeholder="Enter State">
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Enter Pan Number">
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Enter GSTIN">
+      </div>
+
+      <div class="form-group">
+        <input type="date" placeholder="Enter Date of Birth">
+      </div>
+      <div class="form-group">
+        <label>Aadhar Card (Self Attested)</label>
+        <input type="file">
+      </div>
+      <div class="form-group">
+        <label>Pan Card (Self Attested)</label>
+        <input type="file">
+      </div>
+
+      <div class="form-group">
+        <label>Business Address Proof</label>
+        <input type="file">
+      </div>
+      <div class="form-group">
+        <label>GST Certificate</label>
+        <input type="file">
+      </div>
+      <div class="form-group">
+        <label>Selfie with Aadhar Card & Pan Card</label>
+        <input type="file">
+      </div>
+
+      <div style="flex: 1 1 100%; text-align: center;">
+        <button type="submit" class="submit-btn">SUBMIT</button>
+      </div>
+    </form>
+    <div class="footer">
+      Already have an account? <a href=".login btn">Login</a>
+    </div>
+  </div>
+
+</body>
+</html>

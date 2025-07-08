@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TrulyPay Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f8f8f8;
+    }
+    .container {
+      display: flex;
+      max-width: 1000px;
+      margin: 50px auto;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .left {
+      width: 40%;
+      background: #00b7c2;
+      color: white;
+      padding: 30px;
+    }
+    .left h2 {
+      font-size: 22px;
+    }
+    .left ul {
+      margin-top: 20px;
+      padding-left: 20px;
+    }
+    .left ul li {
+      margin-bottom: 10px;
+    }
+    .right {
+      width: 60%;
+      padding: 40px;
+    }
+    .right h2 {
+      margin-bottom: 10px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 15px 0;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      font-size: 16px;
+    }
+    .btn {
+      width: 100%;
+      background: #2196f3;
+      color: white;
+      padding: 15px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #1976d2;
+    }
+    .links {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+    .links a {
+      color: #2196f3;
+      text-decoration: none;
+    }
+    .bottom {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .bottom a {
+      color: #2196f3;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="left">
+    <h2>Our Services At GK ENTERPRISES</h2>
+    <ul>
+      <li>1. Mobile & DTH Recharges</li>
+      <li>2. Bill Payments</li>
+      <li>3. AEPS (Aadhar Payments)</li>
+      <li>4. Domestic Remittance</li>
+      <li>5. Travel Services</li>
+      <li>6. Gift Cards</li>
+    </ul>
+  </div>
+
+  <div class="right">
+    <h2>Welcome Back!</h2>
+    <p><a href="#">Sign in to Continue</a></p>
+    <input type="text" id="mobile" placeholder="Enter Your Mobile" />
+    <input type="password" id="password" placeholder="Enter Your Password" />
+    
+    <div class="links">
+      <div></div>
+      <a href="forgot.html">Forgot Password?</a>
+    </div>
+
+    <button class="btn" onclick="login()">LOG IN</button>
+
+    <div class="bottom">
+      <p>Don't have an account? <a href="signup.html">Register Here</a></p>
+      <p><a href="#">CHANNEL PARTNER ENQUIRY</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function login() {
+    const mobile = document.getElementById("mobile").value;
+    const password = document.getElementById("password").value;
+
+    // Dummy login credentials
+    const correctMobile = "1234567890";
+    const correctPassword = "trulypay";
+
+    if (mobile === correctMobile && password === correctPassword) {
+      alert("Login Successful ✅");
+      localStorage.setItem("loggedIn", "true");
+      window.location.href = "dashboard.html"; // redirect after login
+    } else {
+      alert("Invalid Mobile or Password ❌");
+    }
+  }
+</script>
+
+</body>
+</html>
