@@ -104,20 +104,20 @@
     <div class="header">Register to Continue</div>
     <form>
       <div class="form-group">
-        <input type="text" placeholder="Enter First Name">
+        <input type="text" id="firstName" placeholder="Enter First Name">
       </div>
       <div class="form-group">
-        <input type="text" placeholder="Enter Last Name">
+        <input type="text" id="lastName" placeholder="Enter Last Name">
       </div>
       <div class="form-group">
-        <input type="text" placeholder="Enter Mobile No">
+        <input type="text" id="mobile" placeholder="Enter Mobile No">
       </div>
       <div class="form-group">
-        <input type="email" placeholder="Enter Email">
+        <input type="email" id="email" placeholder="Enter Email">
       </div>
 
       <div class="form-group">
-        <input type="text" placeholder="Enter Business Name">
+        <input type="text" id="businessAddress" placeholder="Enter Business Name">
       </div>
       <div class="form-group">
         <input type="text" placeholder="Enter Business Address">
@@ -140,10 +140,10 @@
         <input type="text" placeholder="Enter State">
       </div>
       <div class="form-group">
-        <input type="text" placeholder="Enter Pan Number">
+        <input type="text" id="pan" placeholder="Enter Pan Number">
       </div>
       <div class="form-group">
-        <input type="text" placeholder="Enter GSTIN">
+        <input type="text" id="gstin" placeholder="Enter GSTIN">
       </div>
 
       <div class="form-group">
@@ -179,6 +179,33 @@
       Already have an account? <a href=".login btn">Login</a>
     </div>
   </div>
+ <script>
+document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault(); // Prevent default form submission
+
+  const firstName = document.getElementById("firstName").value;
+  const lastName = document.getElementById("lastName").value;
+  const mobile = document.getElementById("mobile").value;
+  const email = document.getElementById("email").value;
+  const address = document.getElementById("businessAddress").value;
+  const gstin = document.getElementById("gstin").value;
+  const pan = document.getElementById("pan").value;
+
+  const message = `New Registration:%0A
+Name: ${firstName} ${lastName}%0A
+Mobile: ${mobile}%0A
+Email: ${email}%0A
+Address: ${address}%0A
+GSTIN: ${gstin}%0A
+PAN: ${pan}%0A`;
+
+  const whatsappNumber = "9873839037"; // Replace with your WhatsApp number
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+  window.open(whatsappURL, "_blank");
+});
+</script>
+
 
 </body>
 </html>
